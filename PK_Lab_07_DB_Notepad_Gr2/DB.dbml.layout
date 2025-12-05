@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DB">
+  <DataContextMoniker Name="/DBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7d8aa9ec-fbd6-4503-8145-d1f6b0e1a400" absoluteBounds="3.5, 0.875, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/DBDataContext/Line" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0133843a-aaf1-45de-8db3-2b654c29bec0" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a9d1183-d041-431a-80d9-7636b9239700" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/DBDataContext/Picture" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ed03257-9298-4115-8e79-920a74c8e16a" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBDataContext/Picture/Picture_Line" />
+      <nodes>
+        <classShapeMoniker Id="9a9d1183-d041-431a-80d9-7636b9239700" />
+        <classShapeMoniker Id="7d8aa9ec-fbd6-4503-8145-d1f6b0e1a400" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

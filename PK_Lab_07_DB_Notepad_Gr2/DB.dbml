@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DB.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="PK_Lab_07_DB_Notepad_Gr2.Properties.Settings" SettingsPropertyName="DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Line" Member="Lines">
+    <Type Name="Line">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="XStart" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YStart" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XStop" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YStop" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PictureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Picture_Line" Member="Picture" ThisKey="PictureId" OtherKey="Id" Type="Picture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Picture" Member="Pictures">
+    <Type Name="Picture">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Picture_Line" Member="Lines" ThisKey="Id" OtherKey="PictureId" Type="Line" />
+    </Type>
+  </Table>
+</Database>

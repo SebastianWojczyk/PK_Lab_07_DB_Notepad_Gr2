@@ -30,8 +30,8 @@ CREATE TABLE[dbo].[Line]
 
 -w Bazie "New query"
 - Add / New item / LINQ to SQL Classes
-- Klikamy Tak - kopiowanie bazy do projektu
 - Przeciągamy tabele z bazy do modelu
+- Klikamy Tak - kopiowanie bazy do projektu
 - dla pliku bazy *.mdf zmieniamy "Copy always" na "Copy if newer"
 */
 
