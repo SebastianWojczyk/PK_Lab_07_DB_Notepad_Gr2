@@ -40,11 +40,16 @@ namespace PK_Lab_07_DB_Notepad_Gr2
     public partial class Form1 : Form
     {
         DBDataContext db = new DBDataContext();
+        Graphics graphics;
+        Point pointTMP;
+        Pen pen = new Pen(Color.Black, 2);
         public Form1()
         {
             InitializeComponent();
             getPictures();
 
+            pictureBox.Image = new Bitmap(pictureBox.Width, pictureBox.Height);
+            graphics = Graphics.FromImage(pictureBox.Image);
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -74,6 +79,12 @@ namespace PK_Lab_07_DB_Notepad_Gr2
                 Picture picture = listBoxPictures.SelectedItem as Picture;
                 textBoxName.Text = picture.Name;
 
+                graphics.Clear(Color.White);
+                foreach (Line l in picture.Lines)
+                {
+                    graphics.DrawLine(pen, l.XStart, l.YStart, l.XStop, l.YStop);
+                }
+                pictureBox.Refresh();
             }
         }
 
@@ -88,6 +99,37 @@ namespace PK_Lab_07_DB_Notepad_Gr2
 
                 getPictures();
                 listBoxPictures.SelectedItem = picture;
+            }
+        }
+
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                pointTMP = e.Location;
+            }
+        }
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (listBoxPictures.SelectedItem is Picture)
+                {
+                    Picture picture = listBoxPictures.SelectedItem as Picture;
+
+                    Line newLine = new Line();
+                    newLine.XStart = pointTMP.X;
+                    newLine.YStart = pointTMP.Y;
+                    newLine.XStop = e.X;
+                    newLine.YStop = e.Y;
+
+                    picture.Lines.Add(newLine);
+                    db.SubmitChanges();
+
+                    graphics.DrawLine(pen, pointTMP, e.Location);
+                    pointTMP = e.Location;
+                    pictureBox.Refresh();
+                }
             }
         }
     }
