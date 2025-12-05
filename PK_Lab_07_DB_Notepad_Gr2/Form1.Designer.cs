@@ -43,6 +43,7 @@
             this.buttonInsert.TabIndex = 0;
             this.buttonInsert.Text = "Dodaj notatkę ...";
             this.buttonInsert.UseVisualStyleBackColor = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // listBoxPictures
             // 

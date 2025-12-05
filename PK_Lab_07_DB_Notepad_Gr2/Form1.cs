@@ -39,9 +39,32 @@ namespace PK_Lab_07_DB_Notepad_Gr2
 {
     public partial class Form1 : Form
     {
+        DBDataContext db = new DBDataContext();
         public Form1()
         {
             InitializeComponent();
+            getPictures();
+
+        }
+
+        private void buttonInsert_Click(object sender, EventArgs e)
+        {
+            Picture newPicture = new Picture();
+            newPicture.Name = "Nowa notatka";
+
+            db.Pictures.InsertOnSubmit(newPicture);
+            db.SubmitChanges();
+
+            //wczytuję listę
+            getPictures();
+            //zaznaczam dodaną pozycję
+            listBoxPictures.SelectedItem = newPicture;
+        }
+
+        private void getPictures()
+        {
+            listBoxPictures.Items.Clear();
+            listBoxPictures.Items.AddRange(db.Pictures.ToArray());
         }
     }
 }
