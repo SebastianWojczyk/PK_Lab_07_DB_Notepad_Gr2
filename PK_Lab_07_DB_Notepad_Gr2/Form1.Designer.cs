@@ -28,13 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.buttonInsert = new System.Windows.Forms.Button();
+            this.listBoxPictures = new System.Windows.Forms.ListBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // buttonInsert
+            // 
+            this.buttonInsert.Location = new System.Drawing.Point(13, 13);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.Size = new System.Drawing.Size(190, 23);
+            this.buttonInsert.TabIndex = 0;
+            this.buttonInsert.Text = "Dodaj notatkę ...";
+            this.buttonInsert.UseVisualStyleBackColor = true;
+            // 
+            // listBoxPictures
+            // 
+            this.listBoxPictures.FormattingEnabled = true;
+            this.listBoxPictures.Location = new System.Drawing.Point(13, 43);
+            this.listBoxPictures.Name = "listBoxPictures";
+            this.listBoxPictures.Size = new System.Drawing.Size(190, 498);
+            this.listBoxPictures.TabIndex = 1;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(220, 13);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(779, 20);
+            this.textBoxName.TabIndex = 2;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(220, 43);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(779, 503);
+            this.pictureBox.TabIndex = 3;
+            this.pictureBox.TabStop = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1011, 558);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.listBoxPictures);
+            this.Controls.Add(this.buttonInsert);
+            this.Name = "Form1";
+            this.Text = "Notatnik graficzny";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonInsert;
+        private System.Windows.Forms.ListBox listBoxPictures;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
 
