@@ -52,6 +52,7 @@
             this.listBoxPictures.Name = "listBoxPictures";
             this.listBoxPictures.Size = new System.Drawing.Size(190, 498);
             this.listBoxPictures.TabIndex = 1;
+            this.listBoxPictures.SelectedIndexChanged += new System.EventHandler(this.listBoxPictures_SelectedIndexChanged);
             // 
             // textBoxName
             // 
@@ -59,6 +60,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(779, 20);
             this.textBoxName.TabIndex = 2;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // pictureBox
             // 

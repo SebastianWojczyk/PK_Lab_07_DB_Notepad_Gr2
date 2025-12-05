@@ -66,5 +66,29 @@ namespace PK_Lab_07_DB_Notepad_Gr2
             listBoxPictures.Items.Clear();
             listBoxPictures.Items.AddRange(db.Pictures.ToArray());
         }
+
+        private void listBoxPictures_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxPictures.SelectedItem is Picture)
+            {
+                Picture picture = listBoxPictures.SelectedItem as Picture;
+                textBoxName.Text = picture.Name;
+
+            }
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+            if (listBoxPictures.SelectedItem is Picture)
+            {
+                Picture picture = listBoxPictures.SelectedItem as Picture;
+                picture.Name = textBoxName.Text;
+
+                db.SubmitChanges();
+
+                getPictures();
+                listBoxPictures.SelectedItem = picture;
+            }
+        }
     }
 }
